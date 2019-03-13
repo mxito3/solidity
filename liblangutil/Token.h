@@ -147,58 +147,58 @@ namespace langutil
 	K(As, "as", 0)                                                     \
 	K(Assembly, "assembly", 0)                                         \
 	K(Break, "break", 0)                                               \
-	K(Constant, "constant", 0)                                         \
+	K(Constant, "const", 0)                                         \
 	K(Constructor, "constructor", 0)                                   \
 	K(Continue, "continue", 0)                                         \
-	K(Contract, "contract", 0)                                         \
+	K(Contract, "class", 0)                                         \
 	K(Do, "do", 0)                                                     \
 	K(Else, "else", 0)                                                 \
 	K(Enum, "enum", 0)                                                 \
-	K(Emit, "emit", 0)                                                 \
+	K(Emit, "publish", 0)                                                 \
 	K(Event, "event", 0)                                               \
 	K(External, "external", 0)                                         \
 	K(For, "for", 0)                                                   \
-	K(Function, "function", 0)                                         \
+	K(Function, "def", 0)                                         \
 	K(Hex, "hex", 0)                                                   \
 	K(If, "if", 0)                                                     \
-	K(Indexed, "indexed", 0)                                           \
+	K(Indexed, "index", 0)                                           \
 	K(Interface, "interface", 0)                                       \
-	K(Internal, "internal", 0)                                         \
-	K(Import, "import", 0)                                             \
-	K(Is, "is", 0)                                                     \
+	K(Internal, "private", 0)                                         \
+	K(Import, "include", 0)                                             \
+	K(Is, "inherit", 0)                                                     \
 	K(Library, "library", 0)                                           \
-	K(Mapping, "mapping", 0)                                           \
+	K(Mapping, "map", 0)                                           \
 	K(Memory, "memory", 0)                                             \
-	K(Modifier, "modifier", 0)                                         \
+	K(Modifier, "constraint", 0)                                         \
 	K(New, "new", 0)                                                   \
 	K(Payable, "payable", 0)                                           \
 	K(Public, "public", 0)                                             \
-	K(Pragma, "pragma", 0)                                             \
+	K(Pragma, "compiler", 0)                                             \
 	K(Private, "private", 0)                                           \
 	K(Pure, "pure", 0)                                                 \
 	K(Return, "return", 0)                                             \
-	K(Returns, "returns", 0)                                           \
+	K(Returns, "ret", 0)                                           \
 	K(Storage, "storage", 0)                                           \
 	K(CallData, "calldata", 0)                                         \
 	K(Struct, "struct", 0)                                             \
 	K(Throw, "throw", 0)                                               \
 	K(Type, "type", 0)                                                 \
 	K(Using, "using", 0)                                               \
-	K(Var, "var", 0)                                                   \
-	K(View, "view", 0)                                                 \
+	K(Var, "auto", 0)                                                   \
+	K(View, "read", 0)                                                 \
 	K(While, "while", 0)                                               \
 	\
 	/* Ether subdenominations */                                       \
-	K(SubWei, "wei", 0)                                                \
-	K(SubSzabo, "szabo", 0)                                            \
-	K(SubFinney, "finney", 0)                                          \
-	K(SubEther, "ether", 0)                                            \
-	K(SubSecond, "seconds", 0)                                         \
-	K(SubMinute, "minutes", 0)                                         \
-	K(SubHour, "hours", 0)                                             \
-	K(SubDay, "days", 0)                                               \
-	K(SubWeek, "weeks", 0)                                             \
-	K(SubYear, "years", 0)                                             \
+	K(SubWei, "cent", 0)                                                \
+	K(SubSzabo, "super", 0)                                            \
+	K(SubFinney, "turbo", 0)                                          \
+	K(SubEther, "GKC", 0)                                            \
+	K(SubSecond, "second", 0)                                         \
+	K(SubMinute, "minute", 0)                                         \
+	K(SubHour, "hour", 0)                                             \
+	K(SubDay, "day", 0)                                               \
+	K(SubWeek, "week", 0)                                             \
+	K(SubYear, "year", 0)                                             \
 	/* type keywords*/                                                 \
 	K(Int, "int", 0)                                                   \
 	K(UInt, "uint", 0)                                                 \

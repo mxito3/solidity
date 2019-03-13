@@ -78,5 +78,5 @@ if (NOT EMSCRIPTEN)
 endif()
 
 if (TESTS AND NOT EMSCRIPTEN)
-	add_subdirectory(test)
+	# add_subdirectory(test)
 endif()

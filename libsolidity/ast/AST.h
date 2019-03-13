@@ -183,7 +183,7 @@ public:
 		switch(_visibility)
 		{
 		case Declaration::Visibility::Public:
-			return "public";
+			return "pub";
 		case Declaration::Visibility::Internal:
 			return "internal";
 		case Declaration::Visibility::Private:

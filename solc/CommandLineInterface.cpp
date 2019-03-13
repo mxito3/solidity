@@ -751,6 +751,7 @@ Allowed options)",
 	return true;
 }
 
+
 bool CommandLineInterface::processInput()
 {
 	ReadCallback::Callback fileReader = [this](string const& _path)

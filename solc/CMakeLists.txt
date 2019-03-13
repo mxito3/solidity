@@ -3,7 +3,7 @@ set(
 	CommandLineInterface.cpp CommandLineInterface.h
 	main.cpp
 )
-
+set(CMAKE_BUILD_TYPE Debug)
 add_executable(solc ${sources})
 target_link_libraries(solc PRIVATE solidity ${Boost_PROGRAM_OPTIONS_LIBRARIES})
 
