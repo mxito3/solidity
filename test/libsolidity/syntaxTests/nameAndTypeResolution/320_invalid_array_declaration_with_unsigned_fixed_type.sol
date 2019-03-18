@@ -4,4 +4,4 @@ contract test {
     }
 }
 // ----
-// TypeError: (55-66): Invalid array length, expected integer literal or constant expression.
+// TypeError: (55-66): Invalid array length, expected integer literal or const expression.

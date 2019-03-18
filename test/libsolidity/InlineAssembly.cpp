@@ -195,7 +195,7 @@ BOOST_AUTO_TEST_CASE(keywords)
 	BOOST_CHECK(successParse("{ 1 2 byte 2 return address pop }"));
 }
 
-BOOST_AUTO_TEST_CASE(constants)
+BOOST_AUTO_TEST_CASE(consts)
 {
 	BOOST_CHECK(successParse("{ 7 8 mul pop }"));
 }
@@ -758,7 +758,7 @@ BOOST_AUTO_TEST_CASE(if_statement)
 	BOOST_CHECK(successAssemble("{ let x := 0 if eq(calldatasize(), 0) { x := 1 } mstore(0, x) }"));
 }
 
-BOOST_AUTO_TEST_CASE(large_constant)
+BOOST_AUTO_TEST_CASE(large_const)
 {
 	auto source = R"({
 		switch mul(1, 2)

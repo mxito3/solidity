@@ -165,7 +165,7 @@ BOOST_AUTO_TEST_CASE(cse_unneeded_items)
 	checkCSE(input, input);
 }
 
-BOOST_AUTO_TEST_CASE(cse_constant_addition)
+BOOST_AUTO_TEST_CASE(cse_const_addition)
 {
 	AssemblyItems input{u256(7), u256(8), Instruction::ADD};
 	checkCSE(input, {u256(7 + 8)});

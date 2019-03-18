@@ -54,3 +54,4 @@ CMakeLists.txt.user
 /.cproject
 /.project
 core
+test/**

@@ -2943,11 +2943,11 @@ BOOST_AUTO_TEST_CASE(constructor_static_array_argument)
 	ABI_CHECK(callContractFunction("b(uint256)", u256(2)), encodeArgs(u256(4)));
 }
 
-BOOST_AUTO_TEST_CASE(constant_var_as_array_length)
+BOOST_AUTO_TEST_CASE(const_var_as_array_length)
 {
 	char const* sourceCode = R"(
 		contract C {
-			uint constant LEN = 3;
+			uint const LEN = 3;
 			uint[LEN] public a;
 
 			constructor(uint[LEN] memory _a) public {
@@ -6493,26 +6493,26 @@ BOOST_AUTO_TEST_CASE(pass_dynamic_arguments_to_the_base_base_with_gap)
 	ABI_CHECK(callContractFunction("m_i()"), encodeArgs(4));
 }
 
-BOOST_AUTO_TEST_CASE(simple_constant_variables_test)
+BOOST_AUTO_TEST_CASE(simple_const_variables_test)
 {
 	char const* sourceCode = R"(
 		contract Foo {
 			function getX() public returns (uint r) { return x; }
-			uint constant x = 56;
+			uint const x = 56;
 		}
 	)";
 	compileAndRun(sourceCode);
 	ABI_CHECK(callContractFunction("getX()"), encodeArgs(56));
 }
 
-BOOST_AUTO_TEST_CASE(constant_variables)
+BOOST_AUTO_TEST_CASE(const_variables)
 {
 	char const* sourceCode = R"(
 		contract Foo {
-			uint constant x = 56;
+			uint const x = 56;
 			enum ActionChoices { GoLeft, GoRight, GoStraight, Sit }
-			ActionChoices constant choices = ActionChoices.GoLeft;
-			bytes32 constant st = "abc\x00\xff__";
+			ActionChoices const choices = ActionChoices.GoLeft;
+			bytes32 const st = "abc\x00\xff__";
 		}
 	)";
 	compileAndRun(sourceCode);
@@ -6522,7 +6522,7 @@ BOOST_AUTO_TEST_CASE(assignment_to_const_var_involving_expression)
 {
 	char const* sourceCode = R"(
 		contract C {
-			uint constant x = 0x123 + 0x456;
+			uint const x = 0x123 + 0x456;
 			function f() public returns (uint) { return x + 1; }
 		}
 	)";
@@ -6534,7 +6534,7 @@ BOOST_AUTO_TEST_CASE(assignment_to_const_var_involving_keccak)
 {
 	char const* sourceCode = R"(
 		contract C {
-			bytes32 constant x = keccak256("abc");
+			bytes32 const x = keccak256("abc");
 			function f() public returns (bytes32) { return x; }
 		}
 	)";
@@ -6547,8 +6547,8 @@ BOOST_AUTO_TEST_CASE(assignment_to_const_var_involving_keccak)
 //{
 //	char const* sourceCode = R"(
 //		contract C {
-//			uint[3] constant x = [uint(1), 2, 3];
-//			uint constant y = x[0] + x[1] + x[2];
+//			uint[3] const x = [uint(1), 2, 3];
+//			uint const y = x[0] + x[1] + x[2];
 //			function f() public returns (uint) { return y; }
 //		}
 //	)";
@@ -6557,12 +6557,12 @@ BOOST_AUTO_TEST_CASE(assignment_to_const_var_involving_keccak)
 //}
 
 // Disabled until https://github.com/ethereum/solidity/issues/715 is implemented
-//BOOST_AUTO_TEST_CASE(constant_struct)
+//BOOST_AUTO_TEST_CASE(const_struct)
 //{
 //	char const* sourceCode = R"(
 //		contract C {
 //			struct S { uint x; uint[] y; }
-//			S constant x = S(5, new uint[](4));
+//			S const x = S(5, new uint[](4));
 //			function f() public returns (uint) { return x.x; }
 //		}
 //	)";
@@ -8339,7 +8339,7 @@ BOOST_AUTO_TEST_CASE(literal_strings)
 	ABI_CHECK(callContractFunction("empty()"), encodeDyn(string()));
 }
 
-BOOST_AUTO_TEST_CASE(initialise_string_constant)
+BOOST_AUTO_TEST_CASE(initialise_string_const)
 {
 	char const* sourceCode = R"(
 		contract Test {
@@ -8590,7 +8590,7 @@ BOOST_AUTO_TEST_CASE(accessor_for_const_state_variable)
 {
 	char const* sourceCode = R"(
 		contract Lotto{
-			uint constant public ticketPrice = 555;
+			uint const public ticketPrice = 555;
 		}
 	)";
 
@@ -8711,11 +8711,11 @@ BOOST_AUTO_TEST_CASE(inherited_function_from_a_library) {
 	ABI_CHECK(callContractFunction("g()"), encodeArgs(u256(1)));
 }
 
-BOOST_AUTO_TEST_CASE(inherited_constant_state_var)
+BOOST_AUTO_TEST_CASE(inherited_const_state_var)
 {
 	char const* sourceCode = R"(
 		contract A {
-			uint constant x = 7;
+			uint const x = 7;
 		}
 		contract B is A {
 			function f() public returns (uint) {
@@ -8764,12 +8764,12 @@ BOOST_AUTO_TEST_CASE(multiple_inherited_state_vars)
 	ABI_CHECK(callContractFunction("b()"), encodeArgs(u256(3)));
 }
 
-BOOST_AUTO_TEST_CASE(constant_string_literal)
+BOOST_AUTO_TEST_CASE(const_string_literal)
 {
 	char const* sourceCode = R"(
 		contract Test {
-			bytes32 constant public b = "abcdefghijklmnopq";
-			string constant public x = "abefghijklmnopqabcdefghijklmnopqabcdefghijklmnopqabca";
+			bytes32 const public b = "abcdefghijklmnopq";
+			string const public x = "abefghijklmnopqabcdefghijklmnopqabcdefghijklmnopqabca";
 
 			constructor() public {
 				string memory xx = x;
@@ -9314,7 +9314,7 @@ BOOST_AUTO_TEST_CASE(short_strings)
 			bytes data2;
 			function lengthChange() public returns (uint)
 			{
-				// store constant in short and long string
+				// store const in short and long string
 				data1 = "123";
 				if (!equal(data1, "123")) return 1;
 				data2 = "12345678901234567890123456789012345678901234567890a";
@@ -11884,7 +11884,7 @@ BOOST_AUTO_TEST_CASE(copy_internal_function_array_to_storage)
 	ABI_CHECK(callContractFunction("two()"), encodeArgs());
 }
 
-BOOST_AUTO_TEST_CASE(shift_constant_left)
+BOOST_AUTO_TEST_CASE(shift_const_left)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -11895,7 +11895,7 @@ BOOST_AUTO_TEST_CASE(shift_constant_left)
 	ABI_CHECK(callContractFunction("a()"), encodeArgs(u256(0x4200)));
 }
 
-BOOST_AUTO_TEST_CASE(shift_negative_constant_left)
+BOOST_AUTO_TEST_CASE(shift_negative_const_left)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -11906,7 +11906,7 @@ BOOST_AUTO_TEST_CASE(shift_negative_constant_left)
 	ABI_CHECK(callContractFunction("a()"), encodeArgs(u256(-0x4200)));
 }
 
-BOOST_AUTO_TEST_CASE(shift_constant_right)
+BOOST_AUTO_TEST_CASE(shift_const_right)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -11917,7 +11917,7 @@ BOOST_AUTO_TEST_CASE(shift_constant_right)
 	ABI_CHECK(callContractFunction("a()"), encodeArgs(u256(0x42)));
 }
 
-BOOST_AUTO_TEST_CASE(shift_negative_constant_right)
+BOOST_AUTO_TEST_CASE(shift_negative_const_right)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -12428,7 +12428,7 @@ BOOST_AUTO_TEST_CASE(shift_negative_rvalue_assignment)
 	ABI_CHECK(callContractFunction("g(int256,int256)", u256(1), u256(-1)), encodeArgs());
 }
 
-BOOST_AUTO_TEST_CASE(shift_constant_left_assignment)
+BOOST_AUTO_TEST_CASE(shift_const_left_assignment)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -12442,7 +12442,7 @@ BOOST_AUTO_TEST_CASE(shift_constant_left_assignment)
 	ABI_CHECK(callContractFunction("f()"), encodeArgs(u256(0x4200)));
 }
 
-BOOST_AUTO_TEST_CASE(shift_constant_right_assignment)
+BOOST_AUTO_TEST_CASE(shift_const_right_assignment)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -12780,7 +12780,7 @@ BOOST_AUTO_TEST_CASE(revert_with_cause)
 {
 	char const* sourceCode = R"(
 		contract D {
-			string constant msg1 = "test1234567890123456789012345678901234567890";
+			string const msg1 = "test1234567890123456789012345678901234567890";
 			string msg2 = "test1234567890123456789012345678901234567890";
 			function f() public {
 				revert("test123");
@@ -12845,7 +12845,7 @@ BOOST_AUTO_TEST_CASE(require_with_message)
 		contract D {
 			bool flag = false;
 			string storageError = "abc";
-			string constant constantError = "abc";
+			string const constError = "abc";
 			function f(uint x) public {
 				require(x > 7, "failed");
 			}
@@ -12864,7 +12864,7 @@ BOOST_AUTO_TEST_CASE(require_with_message)
 				require(false, storageError);
 			}
 			function i() public {
-				require(false, constantError);
+				require(false, constError);
 			}
 			function j() public {
 				string memory errMsg = "msg";
@@ -13460,13 +13460,13 @@ BOOST_AUTO_TEST_CASE(function_types_sig)
 	ABI_CHECK(callContractFunction("i()"), encodeArgs(asString(FixedHash<4>(dev::keccak256("x()")).asBytes())));
 }
 
-BOOST_AUTO_TEST_CASE(constant_string)
+BOOST_AUTO_TEST_CASE(const_string)
 {
 	char const* sourceCode = R"(
 		contract C {
-			bytes constant a = "\x03\x01\x02";
-			bytes constant b = hex"030102";
-			string constant c = "hello";
+			bytes const a = "\x03\x01\x02";
+			bytes const b = hex"030102";
+			string const c = "hello";
 			function f() public returns (bytes memory) {
 				return a;
 			}
@@ -14632,7 +14632,7 @@ BOOST_AUTO_TEST_CASE(bitwise_shifting_constantinople)
 	BOOST_CHECK(callContractFunction("sar(uint256,uint256)", u256("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"), u256(256)) == encodeArgs(u256("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")));
 }
 
-BOOST_AUTO_TEST_CASE(bitwise_shifting_constants_constantinople)
+BOOST_AUTO_TEST_CASE(bitwise_shifting_consts_constantinople)
 {
 	if (!dev::test::Options::get().evmVersion().hasBitwiseShifting())
 		return;
@@ -15257,7 +15257,7 @@ BOOST_AUTO_TEST_CASE(contract_name)
 	char const* sourceCode = R"(
 		contract C {
 			string public nameAccessor = type(C).name;
-			string public constant constantNameAccessor = type(C).name;
+			string public const constNameAccessor = type(C).name;
 
 			function name() public pure returns (string memory) {
 				return type(C).name;
@@ -15273,7 +15273,7 @@ BOOST_AUTO_TEST_CASE(contract_name)
 		}
 		contract ThisIsAVeryLongContractNameExceeding256bits {
 			string public nameAccessor = type(ThisIsAVeryLongContractNameExceeding256bits).name;
-			string public constant constantNameAccessor = type(ThisIsAVeryLongContractNameExceeding256bits).name;
+			string public const constNameAccessor = type(ThisIsAVeryLongContractNameExceeding256bits).name;
 
 			function name() public pure returns (string memory) {
 				return type(ThisIsAVeryLongContractNameExceeding256bits).name;
@@ -15285,7 +15285,7 @@ BOOST_AUTO_TEST_CASE(contract_name)
 	bytes argsC = encodeArgs(u256(0x20), u256(1), "C");
 	ABI_CHECK(callContractFunction("name()"), argsC);
 	ABI_CHECK(callContractFunction("nameAccessor()"), argsC);
-	ABI_CHECK(callContractFunction("constantNameAccessor()"), argsC);
+	ABI_CHECK(callContractFunction("constNameAccessor()"), argsC);
 
 	compileAndRun(sourceCode, 0, "D");
 	bytes argsD = encodeArgs(u256(0x20), u256(1), "D");
@@ -15297,7 +15297,7 @@ BOOST_AUTO_TEST_CASE(contract_name)
 	bytes argsLong = encodeArgs(u256(0x20), u256(longName.length()), longName);
 	ABI_CHECK(callContractFunction("name()"), argsLong);
 	ABI_CHECK(callContractFunction("nameAccessor()"), argsLong);
-	ABI_CHECK(callContractFunction("constantNameAccessor()"), argsLong);
+	ABI_CHECK(callContractFunction("constNameAccessor()"), argsLong);
 }
 
 

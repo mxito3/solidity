@@ -1,6 +1,6 @@
 contract C {
-    bool constant LEN = true;
+    bool const LEN = true;
     uint[LEN] ids;
 }
 // ----
-// TypeError: (52-55): Invalid array length, expected integer literal or constant expression.
+// TypeError: (52-55): Invalid array length, expected integer literal or const expression.

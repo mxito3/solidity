@@ -27,7 +27,7 @@
 			"nodes" : 
 			[
 				{
-					"constant" : false,
+					"const" : false,
 					"id" : 3,
 					"name" : "a",
 					"nodeType" : "VariableDeclaration",
@@ -83,7 +83,7 @@
 								"declarations" : 
 								[
 									{
-										"constant" : false,
+										"const" : false,
 										"id" : 9,
 										"name" : "b",
 										"nodeType" : "VariableDeclaration",

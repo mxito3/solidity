@@ -1,3 +1,3 @@
 contract C {
-    uint constant x = 0x123 + 0x456;
+    uint const x = 0x123 + 0x456;
 }

@@ -16,9 +16,9 @@ contract EtherToken is StandardToken {
     /*
      *  Constants
      */
-    string public constant name = "Ether Token";
-    string public constant symbol = "ETH";
-    uint8 public constant decimals = 18;
+    string public const name = "Ether Token";
+    string public const symbol = "ETH";
+    uint8 public const decimals = 18;
 
     /*
      *  Public functions

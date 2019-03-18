@@ -5,7 +5,7 @@ pragma solidity >=0.0;
 /// @author Stefan George - <stefan.george@consensys.net>
 contract MultiSigWallet {
 
-    uint constant public MAX_OWNER_COUNT = 50;
+    uint const public MAX_OWNER_COUNT = 50;
 
     event Confirmation(address indexed sender, uint indexed transactionId);
     event Revocation(address indexed sender, uint indexed transactionId);

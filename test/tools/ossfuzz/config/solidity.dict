@@ -117,7 +117,7 @@
 "bytes7 "
 "bytes8 "
 "bytes9 "
-"constant "
+"const "
 "constructor "
 "continue;"
 "contract "

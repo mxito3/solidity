@@ -1,8 +1,8 @@
 contract Test {
-    string constant x = "abefghijklmnopqabcdefghijklmnopqabcdefghijklmnopqabca";
+    string const x = "abefghijklmnopqabcdefghijklmnopqabcdefghijklmnopqabca";
     function f() public {
         // Even if this is made possible in the future, we should not allow assignment
-        // to elements of constant arrays.
+        // to elements of const arrays.
         x[0] = "f";
     }
 }

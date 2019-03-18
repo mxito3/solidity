@@ -17,10 +17,10 @@ contract c6 {
     function f() pure payable {}
 }
 contract c7 {
-    function f() pure constant {}
+    function f() pure const {}
 }
 contract c8 {
-    function f() view constant {}
+    function f() view const {}
 }
 // ----
 // ParserError: (39-46): State mutability already specified as "payable".

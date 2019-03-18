@@ -60,7 +60,7 @@
 								{
 									"attributes" : 
 									{
-										"constant" : false,
+										"const" : false,
 										"name" : "x",
 										"scope" : 16,
 										"stateVariable" : false,
@@ -99,7 +99,7 @@
 														{
 															"attributes" : 
 															{
-																"constant" : false,
+																"const" : false,
 																"name" : "",
 																"scope" : 5,
 																"stateVariable" : false,
@@ -151,7 +151,7 @@
 								{
 									"attributes" : 
 									{
-										"constant" : false,
+										"const" : false,
 										"name" : "",
 										"scope" : 16,
 										"stateVariable" : false,
@@ -190,7 +190,7 @@
 														{
 															"attributes" : 
 															{
-																"constant" : false,
+																"const" : false,
 																"name" : "",
 																"scope" : 12,
 																"stateVariable" : false,

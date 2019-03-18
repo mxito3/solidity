@@ -88,7 +88,7 @@ contract AuctionSystem {
 		}
 	}
 
-	uint constant c_biddingTime = 7 days;
+	uint const c_biddingTime = 7 days;
 
 	struct Auction {
 		address payable highestBidder;
@@ -109,8 +109,8 @@ contract GlobalRegistrar is Registrar, AuctionSystem {
 		uint renewalDate;
 	}
 
-	uint constant c_renewalInterval = 365 days;
-	uint constant c_freeBytes = 12;
+	uint const c_renewalInterval = 365 days;
+	uint const c_freeBytes = 12;
 
 	constructor() public {
 		// TODO: Populate with hall-of-fame.

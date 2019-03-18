@@ -20,7 +20,7 @@ contract C {
         uint g = true ? x : y;
         g += 1; // Avoid unused var warning
 
-        // integer constants
+        // integer consts
         uint h = true ? 1 : 3;
         h += 1; // Avoid unused var warning
 

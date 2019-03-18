@@ -11,9 +11,9 @@ contract TestToken {
     mapping (address => mapping (address => uint256)) allowed;
     uint256 public totalSupply;
 
-    string constant public name = "Test Token";
-    string constant public symbol = "TT";
-    uint8 constant public decimals = 1;
+    string const public name = "Test Token";
+    string const public symbol = "TT";
+    uint8 const public decimals = 1;
 
     function issueTokens(address _to, uint256 _value)
         public

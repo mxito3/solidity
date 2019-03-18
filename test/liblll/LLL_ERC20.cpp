@@ -170,7 +170,7 @@ static char const* erc20Code = R"DELIMITER(
   ;; Checks that ensure that each function is called with the right
   ;;   number of arguments. For one thing this addresses the "ERC20
   ;;   short address attack". For another, it stops me making
-  ;;   mistakes while testing. We use these only on the non-constant functions.
+  ;;   mistakes while testing. We use these only on the non-const functions.
 
   (def 'has-one-arg    (unless (= 0x24 (calldatasize)) (revert)))
   (def 'has-two-args   (unless (= 0x44 (calldatasize)) (revert)))
@@ -178,7 +178,7 @@ static char const* erc20Code = R"DELIMITER(
 
   ;; --------------------------------------------------------------------------
   ;; Check that addresses have only 160 bits and revert if not.
-  ;;   We use these input type-checks on the non-constant functions.
+  ;;   We use these input type-checks on the non-const functions.
 
   (def 'is-address (addr)
     (when
@@ -216,7 +216,7 @@ static char const* erc20Code = R"DELIMITER(
 
       ;; ----------------------------------------------------------------------
       ;; Getter for the name of the token.
-      ;; @abi name() constant returns (string)
+      ;; @abi name() const returns (string)
       ;; @return The token name as a string.
 
       (function get-name
@@ -224,7 +224,7 @@ static char const* erc20Code = R"DELIMITER(
 
       ;; ----------------------------------------------------------------------
       ;; Getter for the symbol of the token.
-      ;; @abi symbol() constant returns (string)
+      ;; @abi symbol() const returns (string)
       ;; @return The token symbol as a string.
 
       (function get-symbol
@@ -232,7 +232,7 @@ static char const* erc20Code = R"DELIMITER(
 
       ;; ----------------------------------------------------------------------
       ;; Getter for the number of decimals assigned to the token.
-      ;; @abi decimals() constant returns (uint256)
+      ;; @abi decimals() const returns (uint256)
       ;; @return The token decimals.
 
       (function get-decimals
@@ -240,7 +240,7 @@ static char const* erc20Code = R"DELIMITER(
 
       ;; ----------------------------------------------------------------------
       ;; Getter for the total token supply.
-      ;; @abi totalSupply() constant returns (uint256)
+      ;; @abi totalSupply() const returns (uint256)
       ;; @return The token supply.
 
       (function get-total-supply
@@ -248,7 +248,7 @@ static char const* erc20Code = R"DELIMITER(
 
       ;; ----------------------------------------------------------------------
       ;; Returns the account balance of another account.
-      ;; @abi balanceOf(address) constant returns (uint256)
+      ;; @abi balanceOf(address) const returns (uint256)
       ;; @param owner The address of the account's owner.
       ;; @return The account balance.
 
@@ -366,7 +366,7 @@ static char const* erc20Code = R"DELIMITER(
       ;; ----------------------------------------------------------------------
       ;; Returns the amount which _spender is still allowed to withdraw
       ;;   from _owner.
-      ;; @abi allowance(address,address) constant returns (uint256)
+      ;; @abi allowance(address,address) const returns (uint256)
       ;; @param owner The owning account.
       ;; @param spender The withdrawing account.
       ;; @return The allowed amount remaining.
@@ -419,7 +419,7 @@ BOOST_AUTO_TEST_CASE(creation)
 	BOOST_CHECK(callContractFunction("balanceOf(address)", ACCOUNT(0)) == encodeArgs(TOKENSUPPLY));
 }
 
-BOOST_AUTO_TEST_CASE(constants)
+BOOST_AUTO_TEST_CASE(consts)
 {
 	deployErc20();
 

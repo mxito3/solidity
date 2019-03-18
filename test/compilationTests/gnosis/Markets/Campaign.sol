@@ -21,7 +21,7 @@ contract Campaign {
      /*
      *  Constants
      */
-    uint24 public constant FEE_RANGE = 1000000; // 100%
+    uint24 public const FEE_RANGE = 1000000; // 100%
 
     /*
      *  Storage

@@ -53,7 +53,7 @@ Allowed options)",
 		)
 		(
 			"const-opt",
-			"Run the constant optimizer instead of compiling. "
+			"Run the const optimizer instead of compiling. "
 			"Expects a binary string of up to 32 bytes on stdin."
 		)
 		(

@@ -487,7 +487,7 @@ BOOST_AUTO_TEST_CASE(negative_literals_16bits)
 
 BOOST_AUTO_TEST_CASE(intermediately_overflowing_literals)
 {
-	// first literal itself is too large for 256 bits but it fits after all constant operations
+	// first literal itself is too large for 256 bits but it fits after all const operations
 	// have been applied
 	char const* sourceCode = R"(
 		contract test {

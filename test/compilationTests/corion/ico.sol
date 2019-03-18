@@ -25,7 +25,7 @@ contract ico is safeMath {
         uint256 corp;
     }
 
-    uint256 constant oneSegment = 40320;
+    uint256 const oneSegment = 40320;
 
     address payable public owner;
     address payable public tokenAddr;
@@ -36,11 +36,11 @@ contract ico is safeMath {
     address public icoEtcPriceAddr;
     uint256 public icoExchangeRate;
     uint256 public icoExchangeRateSetBlock;
-    uint256 constant icoExchangeRateM = 1e4;
-    uint256 constant interestOnICO   = 25;
-    uint256 constant interestOnICOM  = 1e3;
-    uint256 constant interestBlockDelay = 720;
-    uint256 constant exchangeRateDelay = 125;
+    uint256 const icoExchangeRateM = 1e4;
+    uint256 const interestOnICO   = 25;
+    uint256 const interestOnICOM  = 1e3;
+    uint256 const interestBlockDelay = 720;
+    uint256 const exchangeRateDelay = 125;
     bool public aborted;
     bool public closed;
     icoLevels_s[] public icoLevels;

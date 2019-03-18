@@ -27,7 +27,7 @@
 			"nodes" : 
 			[
 				{
-					"constant" : false,
+					"const" : false,
 					"id" : 4,
 					"name" : "m",
 					"nodeType" : "VariableDeclaration",
@@ -95,7 +95,7 @@
 								"declarations" : 
 								[
 									{
-										"constant" : false,
+										"const" : false,
 										"id" : 12,
 										"name" : "a",
 										"nodeType" : "VariableDeclaration",
@@ -235,7 +235,7 @@
 								"declarations" : 
 								[
 									{
-										"constant" : false,
+										"const" : false,
 										"id" : 22,
 										"name" : "c",
 										"nodeType" : "VariableDeclaration",
@@ -474,7 +474,7 @@
 						"parameters" : 
 						[
 							{
-								"constant" : false,
+								"const" : false,
 								"id" : 6,
 								"name" : "arg",
 								"nodeType" : "VariableDeclaration",
@@ -513,7 +513,7 @@
 						"parameters" : 
 						[
 							{
-								"constant" : false,
+								"const" : false,
 								"id" : 9,
 								"name" : "r",
 								"nodeType" : "VariableDeclaration",

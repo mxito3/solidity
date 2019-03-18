@@ -52,7 +52,7 @@
 						"parameters" : 
 						[
 							{
-								"constant" : false,
+								"const" : false,
 								"id" : 2,
 								"name" : "i",
 								"nodeType" : "VariableDeclaration",

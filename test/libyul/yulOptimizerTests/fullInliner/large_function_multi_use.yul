@@ -7,12 +7,12 @@
     }
     let a := mload(2)
     let a2 := 2
-    // This should not be inlined because it is not a constant
+    // This should not be inlined because it is not a const
     let r := f(a)
-    // This should be inlined because it is a constant
+    // This should be inlined because it is a const
     let t := f(a2)
     let a3
-    // This should be inlined because it is a constant as well (zero)
+    // This should be inlined because it is a const as well (zero)
     let s := f(a3)
 }
 // ----

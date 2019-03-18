@@ -1,6 +1,6 @@
 {
     // Constants cost depending on their magnitude.
-    // Rematerialize small constants only if they are
+    // Rematerialize small consts only if they are
     // not used too often.
     // b is used 5 times
     let b := 2

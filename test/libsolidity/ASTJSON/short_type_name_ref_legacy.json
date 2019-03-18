@@ -97,7 +97,7 @@
 										{
 											"attributes" : 
 											{
-												"constant" : false,
+												"const" : false,
 												"name" : "rows",
 												"scope" : 9,
 												"stateVariable" : false,

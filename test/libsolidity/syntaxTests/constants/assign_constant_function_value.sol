@@ -1,6 +1,6 @@
 contract C {
     function () pure returns (uint) x;
-    uint constant y = x();
+    uint const y = x();
 }
 // ----
-// TypeError: (74-77): Initial value for constant variable has to be compile-time constant.
+// TypeError: (74-77): Initial value for const variable has to be compile-time const.

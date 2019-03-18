@@ -120,7 +120,7 @@ contract FixedFeeRegistrar is Registrar {
 	function m_record(string memory _name) view internal returns (Record storage o_record) {
 		return m_recordData[uint(keccak256(bytes(_name))) / 8];
 	}
-	uint constant c_fee = 69 ether;
+	uint const c_fee = 69 ether;
 }
 )DELIMITER";
 

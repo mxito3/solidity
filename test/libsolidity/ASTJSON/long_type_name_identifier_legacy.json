@@ -38,7 +38,7 @@
 				{
 					"attributes" : 
 					{
-						"constant" : false,
+						"const" : false,
 						"name" : "a",
 						"scope" : 14,
 						"stateVariable" : true,
@@ -138,7 +138,7 @@
 										{
 											"attributes" : 
 											{
-												"constant" : false,
+												"const" : false,
 												"name" : "b",
 												"scope" : 12,
 												"stateVariable" : false,

@@ -68,7 +68,7 @@ BOOST_AUTO_TEST_CASE(variables_are_free)
 	BOOST_CHECK_EQUAL(codeSize("{ let x let y let a, b, c }"), 0);
 }
 
-BOOST_AUTO_TEST_CASE(constants_cost_one)
+BOOST_AUTO_TEST_CASE(consts_cost_one)
 {
 	BOOST_CHECK_EQUAL(codeSize("{ let x := 3 }"), 1);
 }
@@ -88,7 +88,7 @@ BOOST_AUTO_TEST_CASE(function_with_variables_as_arguments)
 	BOOST_CHECK_EQUAL(codeSize("{ function f(x) { sstore(x, 2) } let y f(y) }"), 1);
 }
 
-BOOST_AUTO_TEST_CASE(function_with_variables_and_constants_as_arguments)
+BOOST_AUTO_TEST_CASE(function_with_variables_and_consts_as_arguments)
 {
 	BOOST_CHECK_EQUAL(codeSize(
 		"{ function f(x, r) -> z { sstore(x, r) z := r } let y let t := f(y, 2) }"

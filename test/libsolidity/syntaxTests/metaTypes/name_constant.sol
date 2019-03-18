@@ -1,4 +1,4 @@
 contract C {
-  string public constant name = type(C).name;
+  string public const name = type(C).name;
 }
 // ----

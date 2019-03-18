@@ -168,9 +168,9 @@ BOOST_AUTO_TEST_CASE(unused_expressions)
 	compareVersions("f()");
 }
 
-BOOST_AUTO_TEST_CASE(constant_folding_both_sides)
+BOOST_AUTO_TEST_CASE(const_folding_both_sides)
 {
-	// if constants involving the same associative and commutative operator are applied from both
+	// if consts involving the same associative and commutative operator are applied from both
 	// sides, the operator should be applied only once, because the expression compiler pushes
 	// literals as late as possible
 	char const* sourceCode = R"(
@@ -372,7 +372,7 @@ BOOST_AUTO_TEST_CASE(sequence_number_for_calls)
 	compareVersions("f(string,string)", 0x40, 0x80, 3, "abc", 3, "def");
 }
 
-BOOST_AUTO_TEST_CASE(computing_constants)
+BOOST_AUTO_TEST_CASE(computing_consts)
 {
 	char const* sourceCode = R"(
 		contract C {
@@ -421,19 +421,19 @@ BOOST_AUTO_TEST_CASE(computing_constants)
 	}
 	BOOST_CHECK_EQUAL(2, occurrences);
 
-	bytes constantWithZeros = toBigEndian(u256("0x77abc0000000000000000000000000000000000000000000000000000000001"));
+	bytes constWithZeros = toBigEndian(u256("0x77abc0000000000000000000000000000000000000000000000000000000001"));
 	BOOST_CHECK(search(
 		optimizedBytecode.cbegin(),
 		optimizedBytecode.cend(),
-		constantWithZeros.cbegin(),
-		constantWithZeros.cend()
+		constWithZeros.cbegin(),
+		constWithZeros.cend()
 	) == optimizedBytecode.cend());
 }
 
 
-BOOST_AUTO_TEST_CASE(constant_optimization_early_exit)
+BOOST_AUTO_TEST_CASE(const_optimization_early_exit)
 {
-	// This tests that the constant optimizer does not try to find the best representation
+	// This tests that the const optimizer does not try to find the best representation
 	// indefinitely but instead stops after some number of iterations.
 	char const* sourceCode = R"(
 	contract HexEncoding {
@@ -485,7 +485,7 @@ BOOST_AUTO_TEST_CASE(constant_optimization_early_exit)
 	auto start = std::chrono::steady_clock::now();
 	compileBothVersions(sourceCode);
 	double duration = std::chrono::duration<double>(std::chrono::steady_clock::now() - start).count();
-	BOOST_CHECK_MESSAGE(duration < 20, "Compilation of constants took longer than 20 seconds.");
+	BOOST_CHECK_MESSAGE(duration < 20, "Compilation of consts took longer than 20 seconds.");
 	compareVersions("hexEncodeTest(address)", u256(0x123456789));
 }
 
@@ -628,7 +628,7 @@ BOOST_AUTO_TEST_CASE(optimise_multi_stores)
 	BOOST_CHECK_EQUAL(numInstructions(m_optimizedBytecode, Instruction::SSTORE), 8);
 }
 
-BOOST_AUTO_TEST_CASE(optimise_constant_to_codecopy)
+BOOST_AUTO_TEST_CASE(optimise_const_to_codecopy)
 {
 	char const* sourceCode = R"(
 		contract C {

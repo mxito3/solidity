@@ -265,7 +265,7 @@ contract multiowned {
 
 	// list of owners
 	uint[256] m_owners;
-	uint constant c_maxOwners = 250;
+	uint const c_maxOwners = 250;
 	// index on the list of owners to allow reverse lookup
 	mapping(uint => uint) m_ownerIndex;
 	// the ongoing operations.

@@ -11,8 +11,8 @@ contract LMSRMarketMaker is MarketMaker {
     /*
      *  Constants
      */
-    uint constant ONE = 0x10000000000000000;
-    int constant EXP_LIMIT = 2352680790717288641401;
+    uint const ONE = 0x10000000000000000;
+    int const EXP_LIMIT = 2352680790717288641401;
 
     /*
      *  Public functions

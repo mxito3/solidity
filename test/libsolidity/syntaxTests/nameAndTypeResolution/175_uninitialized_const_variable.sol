@@ -1,5 +1,5 @@
 contract Foo {
-    uint constant y;
+    uint const y;
 }
 // ----
-// TypeError: (19-34): Uninitialized "constant" variable.
+// TypeError: (19-34): Uninitialized "const" variable.

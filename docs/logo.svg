@@ -7,7 +7,7 @@
 <title>Vector 1</title>
 <desc>Created with Sketch.</desc>
 <g id="Page-1" sketch:type="MSPage">
-	<g id="solidity" transform="translate(402.000000, 118.000000)" sketch:type="MSLayerGroup">
+	<g id=pomelo transform="translate(402.000000, 118.000000)" sketch:type="MSLayerGroup">
 		<g id="Group" sketch:type="MSShapeGroup">
 			<path id="Shape" opacity="0.45" enable-background="new    " d="M371.772,135.308L241.068,367.61H-20.158l130.614-232.302
 				H371.772"/>

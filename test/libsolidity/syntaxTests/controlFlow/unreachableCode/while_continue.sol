@@ -4,7 +4,7 @@ contract C {
             continue;
             return;
         }
-        return; // this is unreachable as well, but currently undetected (needs to consider constant condition "true")
+        return; // this is unreachable as well, but currently undetected (needs to consider const condition "true")
     }
 }
 // ----

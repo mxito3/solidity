@@ -1,12 +1,12 @@
 contract C {
-    uint constant L1 = (2);
-    uint constant L2 = ((2));
-    uint constant L3 = ((((2))));
-    uint constant L4 = (2 + 1);
-    uint constant L5 = ((2 + 1));
-    uint constant L6 = (((2) + ((1))));
-    uint constant L7 = (2 + 1) / 1;
-    uint constant L8 = (2 + ((1))) / (1);
+    uint const L1 = (2);
+    uint const L2 = ((2));
+    uint const L3 = ((((2))));
+    uint const L4 = (2 + 1);
+    uint const L5 = ((2 + 1));
+    uint const L6 = (((2) + ((1))));
+    uint const L7 = (2 + 1) / 1;
+    uint const L8 = (2 + ((1))) / (1);
     uint[L1] a1;
     uint[L2] a2;
     uint[L3] a3;

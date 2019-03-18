@@ -151,7 +151,7 @@ ASTPointer<PragmaDirective> Parser::parsePragmaDirective()
 	nodeFactory.markEndPosition();
 	expectToken(Token::Semicolon);
 
-	if (literals.size() >= 2 && literals[0] == "solidity")
+	if (literals.size() >= 2 && literals[0] == "pomelo")
 	{
 		parsePragmaVersion(
 			vector<Token>(tokens.begin() + 1, tokens.end()),

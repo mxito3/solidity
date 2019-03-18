@@ -86,7 +86,7 @@ void FuzzerUtil::testCompiler(string const& _input, bool _optimize, bool _quiet)
 void FuzzerUtil::testConstantOptimizer(string const& _input, bool _quiet)
 {
 	if (!_quiet)
-		cout << "Testing constant optimizer" << endl;
+		cout << "Testing const optimizer" << endl;
 	vector<u256> numbers;
 	stringstream sin(_input);
 

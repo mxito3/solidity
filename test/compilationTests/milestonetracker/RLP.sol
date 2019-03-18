@@ -9,13 +9,13 @@ pragma solidity >=0.0;
 */
 library RLP {
 
- uint constant DATA_SHORT_START = 0x80;
- uint constant DATA_LONG_START = 0xB8;
- uint constant LIST_SHORT_START = 0xC0;
- uint constant LIST_LONG_START = 0xF8;
+ uint const DATA_SHORT_START = 0x80;
+ uint const DATA_LONG_START = 0xB8;
+ uint const LIST_SHORT_START = 0xC0;
+ uint const LIST_LONG_START = 0xF8;
 
- uint constant DATA_LONG_OFFSET = 0xB7;
- uint constant LIST_LONG_OFFSET = 0xF7;
+ uint const DATA_LONG_OFFSET = 0xB7;
+ uint const LIST_LONG_OFFSET = 0xF7;
 
 
  struct RLPItem {

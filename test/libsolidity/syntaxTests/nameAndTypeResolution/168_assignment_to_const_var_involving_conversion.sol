@@ -1,3 +1,3 @@
 contract C {
-    C constant x = C(0x123);
+    C const x = C(0x123);
 }

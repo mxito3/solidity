@@ -1,5 +1,5 @@
 contract test {
-    uint constant x = 2;
+    uint const x = 2;
     function f() pure public {
         assembly {
             let r := x_offset

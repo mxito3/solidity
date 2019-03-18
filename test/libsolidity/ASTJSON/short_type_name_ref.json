@@ -42,7 +42,7 @@
 								"declarations" : 
 								[
 									{
-										"constant" : false,
+										"const" : false,
 										"id" : 7,
 										"name" : "rows",
 										"nodeType" : "VariableDeclaration",

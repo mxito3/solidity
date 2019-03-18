@@ -1,1 +1,1 @@
-library Lib { uint constant x = 9; }
+library Lib { uint const x = 9; }

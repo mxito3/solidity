@@ -10,9 +10,9 @@ library Math {
      *  Constants
      */
     // This is equal to 1 in our calculations
-    uint public constant ONE =  0x10000000000000000;
-    uint public constant LN2 = 0xb17217f7d1cf79ac;
-    uint public constant LOG2_E = 0x171547652b82fe177;
+    uint public const ONE =  0x10000000000000000;
+    uint public const LN2 = 0xb17217f7d1cf79ac;
+    uint public const LOG2_E = 0x171547652b82fe177;
 
     /*
      *  Public functions

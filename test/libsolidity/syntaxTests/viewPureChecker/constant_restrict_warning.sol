@@ -1,5 +1,5 @@
 contract C {
-    uint constant x = 2;
+    uint const x = 2;
     function f() view public returns (uint) {
         return x;
     }

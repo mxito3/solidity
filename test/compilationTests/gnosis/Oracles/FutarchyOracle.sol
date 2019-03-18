@@ -19,7 +19,7 @@ contract FutarchyOracle is Oracle {
     /*
      *  Constants
      */
-    uint8 public constant LONG = 1;
+    uint8 public const LONG = 1;
 
     /*
      *  Storage

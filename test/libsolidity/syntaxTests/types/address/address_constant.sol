@@ -1,6 +1,6 @@
 contract C {
-    address constant a = address(0);
-    address payable constant b = address(0);
+    address const a = address(0);
+    address payable const b = address(0);
     function f() public pure returns (address, address) {
         return (a,b);
     }

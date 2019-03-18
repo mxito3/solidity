@@ -1,5 +1,5 @@
 contract C {
-    uint constant a = a;
+    uint const a = a;
 }
 // ----
-// TypeError: (17-36): The value of the constant a has a cyclic dependency via a.
+// TypeError: (17-36): The value of the const a has a cyclic dependency via a.
